@@ -1,0 +1,1040 @@
+/* =========================================================
+   SELECT DATE & TIME PAGE
+   ========================================================= */
+
+.select-time-page {
+  width: 100%;
+  min-height: calc(100vh - 72px);
+  box-sizing: border-box;
+
+  padding: 20px 24px 50px;
+
+  background: #f8fafc;
+}
+
+
+/* =========================================================
+   MAIN CARD
+   ========================================================= */
+
+.select-time-card {
+  width: min(100%, 1050px);
+
+  margin: 15px auto 0;
+
+  padding: 32px 38px;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border: 1px solid #e6ebf2;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 12px 40px rgba(15, 23, 42, 0.07);
+
+  animation:
+    selectCardPop
+    0.55s
+    cubic-bezier(0.175, 0.885, 0.32, 1.275)
+    both;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.select-time-header {
+  margin-bottom: 30px;
+}
+
+.step-label {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #244cff;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+}
+
+.select-time-header h1 {
+  margin: 0 0 7px;
+
+  color: #102d68;
+
+  font-size: 30px;
+
+  line-height: 1.25;
+
+  font-weight: 700;
+}
+
+.select-time-header p {
+  margin: 0;
+
+  color: #7c89a2;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   MAIN GRID
+   ========================================================= */
+
+.select-time-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 0.9fr)
+    minmax(0, 1.1fr);
+
+  gap: 25px;
+
+  width: 100%;
+}
+
+
+/* =========================================================
+   DATE / TIME SECTIONS
+   ========================================================= */
+
+.date-section,
+.time-section {
+  min-width: 0;
+
+  padding: 22px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #e5eaf1;
+
+  border-radius: 14px;
+
+  background: #ffffff;
+
+  animation:
+    sectionSlideUp
+    0.5s
+    ease
+    both;
+}
+
+.time-section {
+  animation-delay: 0.08s;
+}
+
+
+/* =========================================================
+   SECTION TITLE
+   ========================================================= */
+
+.section-title {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 11px;
+
+  margin-bottom: 18px;
+}
+
+.section-title > svg {
+  flex-shrink: 0;
+
+  margin-top: 2px;
+
+  color: #244cff;
+}
+
+.section-title h2 {
+  margin: 0 0 4px;
+
+  color: #172554;
+
+  font-size: 17px;
+
+  line-height: 1.3;
+
+  font-weight: 700;
+}
+
+.section-title p {
+  margin: 0;
+
+  color: #94a3b8;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   DATE PICKER
+   ========================================================= */
+
+.date-picker {
+  width: 100%;
+
+  min-height: 48px;
+
+  padding: 0 13px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #dce4ef;
+
+  border-radius: 9px;
+
+  outline: none;
+
+  background: #ffffff;
+
+  color: #334155;
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.date-picker:hover {
+  border-color: #b8c7e8;
+}
+
+.date-picker:focus {
+  border-color: #244cff;
+
+  box-shadow:
+    0 0 0 3px rgba(36, 76, 255, 0.1);
+}
+
+.date-picker::-webkit-calendar-picker-indicator {
+  width: 18px;
+  height: 18px;
+
+  cursor: pointer;
+
+  opacity: 0.75;
+}
+
+
+/* =========================================================
+   SELECTED DATE PREVIEW
+   ========================================================= */
+
+.selected-date-preview {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  margin-top: 13px;
+
+  padding: 11px 13px;
+
+  box-sizing: border-box;
+
+  border-radius: 9px;
+
+  background: #f1f5ff;
+
+  border: 1px solid #dce5ff;
+
+  color: #244cff;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  animation:
+    previewPop
+    0.35s
+    ease
+    both;
+}
+
+.selected-date-preview svg {
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   TIMEZONE
+   ========================================================= */
+
+.timezone-box {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  width: fit-content;
+
+  max-width: 100%;
+
+  margin-bottom: 17px;
+
+  padding: 8px 11px;
+
+  box-sizing: border-box;
+
+  border-radius: 8px;
+
+  background: #f8fafc;
+
+  border: 1px solid #e6ebf2;
+
+  color: #64748b;
+
+  font-size: 11px;
+
+  font-weight: 500;
+
+  overflow: hidden;
+}
+
+.timezone-box svg {
+  flex-shrink: 0;
+
+  color: #244cff;
+}
+
+.timezone-box span {
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   TIME GRID
+   ========================================================= */
+
+.time-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 9px;
+}
+
+
+/* =========================================================
+   TIME SLOT
+   ========================================================= */
+
+.time-slot {
+  min-height: 43px;
+
+  padding: 0 8px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 5px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #dce4ef;
+
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  color: #475569;
+
+  font-family: inherit;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.time-slot:hover {
+  border-color: #9db2e8;
+
+  background: #f5f7ff;
+
+  color: #244cff;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 5px 12px rgba(36, 76, 255, 0.08);
+}
+
+.time-slot.selected {
+  border-color: #244cff;
+
+  background: #244cff;
+
+  color: #ffffff;
+
+  box-shadow:
+    0 6px 16px rgba(36, 76, 255, 0.2);
+
+  animation:
+    timeSlotPop
+    0.3s
+    cubic-bezier(0.175, 0.885, 0.32, 1.275)
+    both;
+}
+
+.time-slot.selected:hover {
+  background: #1d3fe0;
+
+  color: #ffffff;
+}
+
+.time-slot svg {
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   SELECTED SLOT SUMMARY
+   ========================================================= */
+
+.selected-slot-summary {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 0;
+
+  margin-top: 23px;
+
+  border: 1px solid #e4eaf2;
+
+  border-radius: 12px;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  animation:
+    summaryPop
+    0.45s
+    ease
+    both;
+}
+
+.selected-slot-summary > div {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 10px;
+
+  min-width: 0;
+
+  padding: 15px;
+
+  box-sizing: border-box;
+
+  border-right: 1px solid #edf1f6;
+}
+
+.selected-slot-summary > div:last-child {
+  border-right: none;
+}
+
+.selected-slot-summary svg {
+  flex-shrink: 0;
+
+  margin-top: 2px;
+
+  color: #244cff;
+}
+
+.selected-slot-summary small {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: #94a3b8;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.05em;
+}
+
+.selected-slot-summary strong {
+  display: block;
+
+  color: #334155;
+
+  font-size: 12px;
+
+  line-height: 1.4;
+
+  word-break: break-word;
+}
+
+
+/* =========================================================
+   ACTION BUTTONS
+   ========================================================= */
+
+.select-time-actions {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-top: 25px;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+   ========================================================= */
+
+.back-button {
+  min-height: 42px;
+
+  padding: 0 17px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 7px;
+
+  border: 1px solid #dbe3ee;
+
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  color: #475569;
+
+  font-family: inherit;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.back-button:hover {
+  background: #f8fafc;
+
+  border-color: #cbd5e1;
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   CONTINUE BUTTON
+   ========================================================= */
+
+.continue-button {
+  min-height: 42px;
+
+  padding: 0 20px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  border: 1px solid #244cff;
+
+  border-radius: 8px;
+
+  background: #244cff;
+
+  color: #ffffff;
+
+  font-family: inherit;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 6px 15px rgba(36, 76, 255, 0.18);
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.continue-button:hover:not(:disabled) {
+  background: #1d3fe0;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 18px rgba(36, 76, 255, 0.25);
+}
+
+.continue-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.continue-button:disabled {
+  opacity: 0.55;
+
+  cursor: not-allowed;
+
+  box-shadow: none;
+}
+
+
+/* =========================================================
+   AVAILABILITY STATUS
+   ========================================================= */
+
+.availability-status {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 7px;
+
+  margin-top: 15px;
+
+  padding: 9px 12px;
+
+  border-radius: 8px;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  animation:
+    statusFade
+    0.35s
+    ease
+    both;
+}
+
+.availability-status svg {
+  flex-shrink: 0;
+}
+
+.availability-status.available {
+  color: #15803d;
+
+  background: #f0fdf4;
+
+  border: 1px solid #bbf7d0;
+}
+
+.availability-status.unavailable {
+  color: #b45309;
+
+  background: #fffbeb;
+
+  border: 1px solid #fde68a;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+   ========================================================= */
+
+@keyframes selectCardPop {
+  0% {
+    opacity: 0;
+
+    transform:
+      translateY(25px)
+      scale(0.97);
+  }
+
+  70% {
+    opacity: 1;
+
+    transform:
+      translateY(-3px)
+      scale(1.005);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+}
+
+
+@keyframes sectionSlideUp {
+  0% {
+    opacity: 0;
+
+    transform: translateY(18px);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+
+@keyframes previewPop {
+  0% {
+    opacity: 0;
+
+    transform: scale(0.95);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform: scale(1);
+  }
+}
+
+
+@keyframes timeSlotPop {
+  0% {
+    transform: scale(0.94);
+  }
+
+  70% {
+    transform: scale(1.04);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+@keyframes summaryPop {
+  0% {
+    opacity: 0;
+
+    transform: translateY(8px);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+
+@keyframes statusFade {
+  0% {
+    opacity: 0;
+
+    transform: translateY(5px);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+  .select-time-page {
+    padding: 18px 16px 40px;
+  }
+
+  .select-time-card {
+    padding: 28px 25px;
+  }
+
+  .select-time-grid {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+  }
+
+  .time-grid {
+    grid-template-columns:
+      repeat(4, minmax(0, 1fr));
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .select-time-page {
+    padding: 12px 10px 35px;
+  }
+
+  .select-time-card {
+    width: 100%;
+
+    margin-top: 10px;
+
+    padding: 23px 16px;
+
+    border-radius: 14px;
+  }
+
+  .select-time-header {
+    margin-bottom: 22px;
+  }
+
+  .select-time-header h1 {
+    font-size: 24px;
+  }
+
+  .select-time-header p {
+    font-size: 12px;
+  }
+
+  .date-section,
+  .time-section {
+    padding: 17px;
+  }
+
+  .section-title h2 {
+    font-size: 15px;
+  }
+
+  .section-title p {
+    font-size: 11px;
+  }
+
+  .time-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 8px;
+  }
+
+  .time-slot {
+    min-height: 42px;
+
+    font-size: 12px;
+  }
+
+  .selected-slot-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .selected-slot-summary > div {
+    border-right: none;
+
+    border-bottom: 1px solid #edf1f6;
+  }
+
+  .selected-slot-summary > div:last-child {
+    border-bottom: none;
+  }
+
+  .select-time-actions {
+    flex-direction: column-reverse;
+
+    width: 100%;
+  }
+
+  .back-button,
+  .continue-button {
+    width: 100%;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+  .select-time-header h1 {
+    font-size: 22px;
+  }
+
+  .time-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .timezone-box {
+    width: 100%;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .select-time-card,
+  .date-section,
+  .time-section,
+  .selected-date-preview,
+  .time-slot,
+  .selected-slot-summary,
+  .availability-status {
+    animation: none !important;
+  }
+
+  .time-slot,
+  .back-button,
+  .continue-button,
+  .date-picker {
+    transition: none !important;
+  }
+}
+/* =========================================
+   TIMEZONE SELECTOR
+========================================= */
+
+.timezone-box {
+  margin-top: 18px;
+  padding: 16px;
+  border: 1px solid #dfe5f2;
+  border-radius: 12px;
+  background: #f8faff;
+}
+
+.timezone-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.timezone-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #182b49;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.live-badge {
+  font-size: 10px;
+  font-weight: 700;
+  color: #16a34a;
+  background: #dcfce7;
+  padding: 4px 8px;
+  border-radius: 20px;
+}
+
+.timezone-select {
+  width: 100%;
+  height: 44px;
+  padding: 0 12px;
+  border: 1px solid #cfd7e6;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #182b49;
+  font-size: 14px;
+  font-weight: 500;
+  outline: none;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.timezone-select:hover {
+  border-color: #244cff;
+}
+
+.timezone-select:focus {
+  border-color: #244cff;
+  box-shadow:
+    0 0 0 3px
+    rgba(36, 76, 255, 0.1);
+}
+
+.timezone-current-time {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid #e5eaf2;
+  font-size: 12px;
+  color: #68758a;
+}
+
+.timezone-current-time strong {
+  color: #182b49;
+  font-size: 14px;
+}
+
+.timezone-name {
+  display: block;
+  margin-top: 6px;
+  color: #8994a7;
+  font-size: 11px;
+}

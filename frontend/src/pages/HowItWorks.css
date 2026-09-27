@@ -1,0 +1,549 @@
+/* =========================================
+   CODEYOUNG - HOW IT WORKS PAGE
+   ========================================= */
+
+.how-page {
+  min-height: 100vh;
+  background: #ffffff;
+  color: #071b49;
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+/* ================= NAVBAR ================= */
+
+.how-navbar {
+  height: 76px;
+  width: 100%;
+  padding: 0 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: #06152f;
+  color: white;
+
+  position: relative;
+  z-index: 20;
+}
+
+.how-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  color: white;
+  text-decoration: none;
+
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.how-logo-mark {
+  width: 25px;
+  height: 25px;
+
+  display: inline-block;
+
+  background: #ffc928;
+
+  border-radius: 3px;
+
+  position: relative;
+}
+
+.how-logo-mark::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 15px;
+  height: 13px;
+
+  background: #ffc928;
+
+  border-radius: 0 0 0 3px;
+}
+
+.how-nav {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+}
+
+.how-nav a {
+  color: #ffffff;
+  text-decoration: none;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  opacity: 0.92;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+.how-nav a:hover {
+  color: #8db5ff;
+}
+
+.how-nav .how-book-link {
+  background: #313de8;
+
+  padding: 12px 20px;
+
+  border-radius: 9px;
+
+  box-shadow: 0 7px 20px rgba(49, 61, 232, 0.25);
+}
+
+.how-nav .how-book-link:hover {
+  color: white;
+  background: #2532d6;
+}
+
+.how-nav .how-active-link {
+  color: #8db5ff;
+}
+
+.how-signin {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 94px;
+  height: 43px;
+
+  border-radius: 9px;
+
+  background: #263be1;
+
+  color: white;
+  text-decoration: none;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  transition: 0.2s ease;
+}
+
+.how-signin:hover {
+  background: #3449f0;
+  transform: translateY(-1px);
+}
+
+/* ================= MAIN ================= */
+
+.how-main {
+  min-height: calc(100vh - 76px);
+  background: #ffffff;
+}
+
+/* ================= HERO ================= */
+
+.how-hero {
+  text-align: center;
+
+  padding: 72px 20px 45px;
+}
+
+.how-eyebrow {
+  margin: 0 0 14px;
+
+  color: #536ed9;
+
+  font-size: 13px;
+  font-weight: 800;
+
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.how-hero h1 {
+  margin: 0;
+
+  color: #071b49;
+
+  font-size: clamp(42px, 5vw, 64px);
+  line-height: 1.05;
+
+  font-weight: 850;
+  letter-spacing: -2px;
+}
+
+.how-subtitle {
+  margin: 18px auto 0;
+
+  max-width: 720px;
+
+  color: #64748b;
+
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+/* ================= STEPS ================= */
+
+.how-steps {
+  width: min(1400px, calc(100% - 100px));
+
+  margin: 35px auto 0;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1fr
+    1fr
+    1fr;
+
+  gap: 0;
+}
+
+.how-step-wrapper {
+  display: flex;
+  align-items: center;
+
+  position: relative;
+}
+
+.how-step {
+  width: 100%;
+
+  text-align: center;
+
+  padding: 10px 30px 30px;
+}
+
+/* ICON */
+
+.how-icon-circle {
+  width: 150px;
+  height: 150px;
+
+  margin: 0 auto 20px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    radial-gradient(
+      circle at 50% 40%,
+      #ffffff 0%,
+      #f3f5ff 48%,
+      #e7ebff 100%
+    );
+
+  box-shadow:
+    inset 0 0 0 1px #edf0ff,
+    0 12px 35px rgba(34, 54, 160, 0.08);
+}
+
+.how-icon {
+  width: 68px;
+  height: 68px;
+
+  fill: none;
+  stroke: #2939dc;
+  stroke-width: 3;
+
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* NUMBER */
+
+.how-number {
+  width: 52px;
+  height: 52px;
+
+  margin: 0 auto 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #313de8;
+
+  color: white;
+
+  font-size: 24px;
+  font-weight: 800;
+
+  box-shadow:
+    0 8px 20px rgba(49, 61, 232, 0.22);
+}
+
+.how-step h2 {
+  margin: 0 auto 14px;
+
+  color: #071b49;
+
+  font-size: 22px;
+  line-height: 1.25;
+
+  font-weight: 800;
+}
+
+.how-step p {
+  max-width: 245px;
+
+  margin: 0 auto;
+
+  color: #64748b;
+
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+/* ================= ARROW ================= */
+
+.how-arrow {
+  position: absolute;
+
+  right: -12px;
+  top: 145px;
+
+  width: 45px;
+
+  color: #b6bfd1;
+
+  font-size: 48px;
+  font-weight: 300;
+
+  z-index: 2;
+}
+
+/* ================= BOTTOM CTA ================= */
+
+.how-bottom {
+  width: min(1000px, calc(100% - 50px));
+
+  margin: 90px auto 0;
+  padding: 55px 30px;
+
+  text-align: center;
+
+  border-radius: 24px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #071b49 0%,
+      #102d81 55%,
+      #173fe0 100%
+    );
+
+  color: white;
+
+  box-shadow:
+    0 20px 50px rgba(7, 27, 73, 0.18);
+}
+
+.how-bottom h2 {
+  margin: 0;
+
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.how-bottom p {
+  max-width: 650px;
+
+  margin: 15px auto 25px;
+
+  color: #dbe5ff;
+
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.how-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 14px 24px;
+
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  color: #2639dc;
+
+  text-decoration: none;
+
+  font-size: 16px;
+  font-weight: 800;
+
+  transition: 0.2s ease;
+}
+
+.how-cta:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.18);
+}
+
+.how-cta span {
+  font-size: 22px;
+}
+
+/* ================= TABLET ================= */
+
+@media (max-width: 1050px) {
+  .how-navbar {
+    padding: 0 25px;
+  }
+
+  .how-nav {
+    gap: 17px;
+  }
+
+  .how-nav a {
+    font-size: 13px;
+  }
+
+  .how-steps {
+    width: calc(100% - 40px);
+  }
+
+  .how-step {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .how-icon-circle {
+    width: 125px;
+    height: 125px;
+  }
+
+  .how-icon {
+    width: 58px;
+    height: 58px;
+  }
+
+  .how-arrow {
+    right: -20px;
+  }
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 760px) {
+  .how-navbar {
+    height: auto;
+    min-height: 70px;
+
+    padding: 15px 18px;
+
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .how-logo {
+    font-size: 20px;
+  }
+
+  .how-nav {
+    order: 3;
+
+    width: 100%;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    overflow-x: auto;
+
+    padding-bottom: 5px;
+  }
+
+  .how-nav a {
+    white-space: nowrap;
+    font-size: 12px;
+  }
+
+  .how-nav .how-book-link {
+    padding: 9px 12px;
+  }
+
+  .how-signin {
+    min-width: 75px;
+    height: 38px;
+
+    font-size: 13px;
+  }
+
+  .how-hero {
+    padding-top: 45px;
+  }
+
+  .how-hero h1 {
+    font-size: 42px;
+  }
+
+  .how-subtitle {
+    font-size: 17px;
+  }
+
+  .how-steps {
+    display: block;
+
+    width: calc(100% - 35px);
+  }
+
+  .how-step-wrapper {
+    display: block;
+
+    margin-bottom: 55px;
+  }
+
+  .how-step {
+    padding: 0 15px;
+  }
+
+  .how-icon-circle {
+    width: 125px;
+    height: 125px;
+  }
+
+  .how-arrow {
+    position: static;
+
+    width: 100%;
+
+    margin-top: 5px;
+
+    text-align: center;
+
+    transform: rotate(90deg);
+  }
+
+  .how-bottom {
+    margin-top: 35px;
+  }
+
+  .how-bottom h2 {
+    font-size: 25px;
+  }
+}

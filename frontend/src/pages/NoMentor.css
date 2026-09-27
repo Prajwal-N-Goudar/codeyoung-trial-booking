@@ -1,0 +1,1003 @@
+/* =========================================================
+   NO MENTOR PAGE
+   ========================================================= */
+
+.no-mentor-page {
+  width: 100%;
+  min-height: calc(100vh - 72px);
+
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  padding:
+    38px
+    20px
+    70px;
+
+  background: #ffffff;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+   ========================================================= */
+
+.no-mentor-container {
+  width: min(100%, 1000px);
+
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+
+  animation:
+    noMentorPagePop
+    0.6s
+    cubic-bezier(
+      0.175,
+      0.885,
+      0.32,
+      1.275
+    )
+    both;
+}
+
+
+/* =========================================================
+   ILLUSTRATION AREA
+   ========================================================= */
+
+.no-mentor-illustration {
+  position: relative;
+
+  width: 100%;
+  max-width: 760px;
+
+  height: 390px;
+
+  margin: 0 auto 15px;
+
+  overflow: hidden;
+
+  animation:
+    illustrationFloat
+    4s
+    ease-in-out
+    infinite;
+}
+
+
+/* =========================================================
+   CALENDAR
+   ========================================================= */
+
+.illustration-calendar {
+  position: absolute;
+
+  left: 50%;
+  top: 35px;
+
+  width: 350px;
+  height: 255px;
+
+  transform: translateX(-50%);
+
+  border-radius: 12px;
+
+  background: #ffffff;
+
+  border: 3px solid #174ea6;
+
+  box-shadow:
+    0 12px 30px
+    rgba(36, 76, 255, 0.08);
+}
+
+
+/* Calendar top */
+
+.calendar-top {
+  position: relative;
+
+  width: 100%;
+  height: 62px;
+
+  box-sizing: border-box;
+
+  background:
+    linear-gradient(
+      180deg,
+      #647cf1,
+      #526ee5
+    );
+
+  border-radius:
+    8px
+    8px
+    0
+    0;
+}
+
+
+/* Calendar rings */
+
+.calendar-top span {
+  position: absolute;
+
+  top: -24px;
+
+  width: 18px;
+  height: 65px;
+
+  border-radius: 12px;
+
+  background: #113b9b;
+
+  box-shadow:
+    0 3px 0 rgba(0, 0, 0, 0.08);
+}
+
+
+.calendar-top span:first-child {
+  left: 67px;
+}
+
+
+.calendar-top span:last-child {
+  right: 67px;
+}
+
+
+/* Calendar body */
+
+.calendar-body {
+  position: relative;
+
+  width: 100%;
+  height: calc(100% - 62px);
+
+  box-sizing: border-box;
+
+  padding: 20px 25px;
+
+  background: #ffffff;
+}
+
+
+/* Calendar grid */
+
+.calendar-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(5, 1fr);
+
+  gap: 12px;
+
+  opacity: 0.28;
+}
+
+
+.calendar-grid i {
+  display: block;
+
+  width: 28px;
+  height: 28px;
+
+  margin: auto;
+
+  border-radius: 4px;
+
+  background: #edf2fb;
+}
+
+
+/* =========================================================
+   RED CROSS
+   ========================================================= */
+
+.calendar-cross {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 72px;
+  height: 72px;
+
+  transform:
+    translate(-50%, -35%);
+
+  border-radius: 50%;
+
+  background: #ef6262;
+
+  box-shadow:
+    0 8px 20px
+    rgba(239, 98, 98, 0.2);
+
+  animation:
+    crossPulse
+    2s
+    ease-in-out
+    infinite;
+}
+
+
+.calendar-cross span {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 39px;
+  height: 6px;
+
+  border-radius: 5px;
+
+  background: #ffffff;
+}
+
+
+.calendar-cross span:first-child {
+  transform:
+    translate(-50%, -50%)
+    rotate(45deg);
+}
+
+
+.calendar-cross span:last-child {
+  transform:
+    translate(-50%, -50%)
+    rotate(-45deg);
+}
+
+
+/* =========================================================
+   PLANT
+   ========================================================= */
+
+.illustration-plant {
+  position: absolute;
+
+  left: 105px;
+  bottom: 55px;
+
+  width: 100px;
+  height: 170px;
+}
+
+
+.plant-stem {
+  position: absolute;
+
+  left: 48px;
+  bottom: 60px;
+
+  width: 5px;
+  height: 90px;
+
+  border-radius: 5px;
+
+  background: #48b9a7;
+
+  transform: rotate(-4deg);
+}
+
+
+/* Leaves */
+
+.plant-leaf {
+  position: absolute;
+
+  width: 42px;
+  height: 25px;
+
+  border-radius:
+    100% 0
+    100% 0;
+
+  background: #58c5b2;
+}
+
+
+.leaf-one {
+  left: 18px;
+  bottom: 110px;
+
+  transform:
+    rotate(35deg);
+}
+
+
+.leaf-two {
+  left: 50px;
+  bottom: 135px;
+
+  transform:
+    rotate(-30deg)
+    scale(0.9);
+}
+
+
+.leaf-three {
+  left: 3px;
+  bottom: 145px;
+
+  transform:
+    rotate(45deg)
+    scale(0.75);
+}
+
+
+/* Pot */
+
+.plant-pot {
+  position: absolute;
+
+  left: 25px;
+  bottom: 0;
+
+  width: 55px;
+  height: 48px;
+
+  background: #b7c2d4;
+
+  clip-path:
+    polygon(
+      0 0,
+      100% 0,
+      85% 100%,
+      15% 100%
+    );
+
+  border-radius: 4px;
+}
+
+
+/* =========================================================
+   LAPTOP
+   ========================================================= */
+
+.illustration-laptop {
+  position: absolute;
+
+  left: 50%;
+
+  bottom: 50px;
+
+  width: 235px;
+  height: 150px;
+
+  transform:
+    translateX(30px);
+
+  z-index: 4;
+}
+
+
+.laptop-screen {
+  position: absolute;
+
+  left: 18px;
+  top: 0;
+
+  width: 190px;
+  height: 115px;
+
+  border-radius:
+    8px
+    8px
+    3px
+    3px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #dce6f4,
+      #b9c7d9
+    );
+
+  border:
+    5px solid #aab9cc;
+
+  transform:
+    skewY(-4deg);
+}
+
+
+.laptop-dot {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 15px;
+  height: 15px;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  opacity: 0.6;
+}
+
+
+.laptop-base {
+  position: absolute;
+
+  left: 0;
+  bottom: 10px;
+
+  width: 230px;
+  height: 22px;
+
+  border-radius:
+    4px
+    4px
+    20px
+    20px;
+
+  background: #aebed0;
+
+  transform: skewX(-18deg);
+}
+
+
+/* =========================================================
+   PERSON
+   ========================================================= */
+
+.illustration-person {
+  position: absolute;
+
+  right: 105px;
+  bottom: 42px;
+
+  width: 205px;
+  height: 270px;
+
+  z-index: 5;
+}
+
+
+/* Hair */
+
+.person-hair {
+  position: absolute;
+
+  right: 5px;
+  top: 15px;
+
+  width: 145px;
+  height: 185px;
+
+  border-radius:
+    60%
+    60%
+    48%
+    48%;
+
+  background:
+    #173d83;
+
+  transform: rotate(8deg);
+}
+
+
+/* Face */
+
+.person-face {
+  position: absolute;
+
+  right: 48px;
+  top: 52px;
+
+  width: 95px;
+  height: 110px;
+
+  border-radius:
+    45%
+    45%
+    48%
+    48%;
+
+  background: #f2b89b;
+
+  z-index: 2;
+
+  transform: rotate(4deg);
+}
+
+
+/* Eyes */
+
+.person-eye {
+  position: absolute;
+
+  top: 48px;
+
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #263247;
+}
+
+
+.eye-one {
+  left: 28px;
+}
+
+
+.eye-two {
+  right: 25px;
+}
+
+
+/* Mouth */
+
+.person-mouth {
+  position: absolute;
+
+  left: 42px;
+  bottom: 28px;
+
+  width: 18px;
+  height: 7px;
+
+  border-bottom:
+    2px solid #bd665d;
+
+  border-radius: 50%;
+}
+
+
+/* Body */
+
+.person-body {
+  position: absolute;
+
+  right: 10px;
+  bottom: 0;
+
+  width: 175px;
+  height: 125px;
+
+  border-radius:
+    70px
+    70px
+    20px
+    20px;
+
+  background:
+    #f4a51c;
+
+  z-index: 1;
+}
+
+
+/* =========================================================
+   DECORATIVE LINES
+   ========================================================= */
+
+.decor-line {
+  position: absolute;
+
+  display: block;
+
+  width: 45px;
+  height: 7px;
+
+  border-radius: 8px;
+
+  background: #f36a70;
+
+  transform: rotate(35deg);
+}
+
+
+.line-one {
+  left: 180px;
+  top: 55px;
+}
+
+
+.line-two {
+  left: 165px;
+  top: 90px;
+
+  width: 30px;
+
+  transform:
+    rotate(10deg);
+}
+
+
+/* =========================================================
+   TITLE
+   ========================================================= */
+
+.no-mentor-container h1 {
+  max-width: 850px;
+
+  margin: 5px auto 12px;
+
+  color: #102d68;
+
+  font-size: 40px;
+
+  line-height: 1.2;
+
+  font-weight: 700;
+
+  letter-spacing: -0.6px;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.no-mentor-description {
+  max-width: 650px;
+
+  margin: 0 auto 28px;
+
+  color: #71809b;
+
+  font-size: 17px;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   ACTION BUTTONS
+   ========================================================= */
+
+.no-mentor-actions {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 18px;
+
+  width: 100%;
+
+  margin-top: 4px;
+}
+
+
+.no-mentor-primary,
+.no-mentor-secondary {
+  min-height: 58px;
+
+  box-sizing: border-box;
+
+  padding:
+    0
+    28px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  border-radius: 10px;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+/* Primary */
+
+.no-mentor-primary {
+  min-width: 360px;
+
+  background: #3048e8;
+
+  color: #ffffff;
+
+  box-shadow:
+    0 8px 20px
+    rgba(48, 72, 232, 0.2);
+}
+
+
+.no-mentor-primary:hover {
+  background: #253bd0;
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 12px 25px
+    rgba(48, 72, 232, 0.28);
+}
+
+
+/* Secondary */
+
+.no-mentor-secondary {
+  min-width: 320px;
+
+  border:
+    1px solid #dce4ef;
+
+  background: #ffffff;
+
+  color: #31446b;
+}
+
+
+.no-mentor-secondary:hover {
+  background: #f7f9fd;
+
+  transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   BACK BUTTON
+   ========================================================= */
+
+.no-mentor-back {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  margin-top: 25px;
+
+  color: #7c89a2;
+
+  font-size: 12px;
+
+  font-weight: 500;
+
+  text-decoration: none;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.no-mentor-back:hover {
+  color: #244cff;
+
+  transform: translateX(-3px);
+}
+
+
+/* =========================================================
+   ANIMATIONS
+   ========================================================= */
+
+@keyframes noMentorPagePop {
+
+  0% {
+    opacity: 0;
+
+    transform:
+      translateY(35px)
+      scale(0.96);
+  }
+
+  70% {
+    opacity: 1;
+
+    transform:
+      translateY(-3px)
+      scale(1.01);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+}
+
+
+@keyframes illustrationFloat {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+
+@keyframes crossPulse {
+
+  0%,
+  100% {
+    transform:
+      translate(-50%, -35%)
+      scale(1);
+  }
+
+  50% {
+    transform:
+      translate(-50%, -35%)
+      scale(1.06);
+  }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+  .no-mentor-page {
+    padding:
+      30px
+      18px
+      55px;
+  }
+
+
+  .no-mentor-illustration {
+    transform: scale(0.88);
+
+    transform-origin:
+      center top;
+
+    margin-bottom: -35px;
+  }
+
+
+  .no-mentor-container h1 {
+    font-size: 34px;
+  }
+
+
+  .no-mentor-description {
+    font-size: 15px;
+  }
+
+
+  .no-mentor-primary {
+    min-width: 300px;
+  }
+
+
+  .no-mentor-secondary {
+    min-width: 270px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+  .no-mentor-page {
+    min-height: calc(100vh - 64px);
+
+    padding:
+      20px
+      12px
+      45px;
+  }
+
+
+  .no-mentor-illustration {
+    height: 285px;
+
+    transform: scale(0.68);
+
+    transform-origin:
+      center top;
+
+    margin-bottom: -75px;
+  }
+
+
+  .no-mentor-container h1 {
+    max-width: 500px;
+
+    font-size: 27px;
+
+    line-height: 1.3;
+  }
+
+
+  .no-mentor-description {
+    font-size: 14px;
+
+    line-height: 1.6;
+  }
+
+
+  .no-mentor-description br {
+    display: none;
+  }
+
+
+  .no-mentor-actions {
+    flex-direction: column;
+
+    gap: 11px;
+  }
+
+
+  .no-mentor-primary,
+  .no-mentor-secondary {
+    width: 100%;
+
+    min-width: 0;
+
+    min-height: 52px;
+
+    padding:
+      0
+      18px;
+
+    font-size: 14px;
+  }
+
+
+  .no-mentor-back {
+    margin-top: 20px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+  .no-mentor-illustration {
+    transform: scale(0.58);
+
+    margin-bottom: -105px;
+  }
+
+
+  .no-mentor-container h1 {
+    font-size: 24px;
+  }
+
+
+  .no-mentor-description {
+    font-size: 13px;
+  }
+}

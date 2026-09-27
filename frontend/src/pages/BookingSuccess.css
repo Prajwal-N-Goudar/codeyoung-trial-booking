@@ -1,0 +1,1318 @@
+/* =====================================================
+   BOOKING SUCCESS PAGE
+===================================================== */
+
+.success-page {
+  position: relative;
+
+  width: 100%;
+  min-height: calc(100vh - 72px);
+
+  padding: 35px 20px 70px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 50% 5%,
+      rgba(36, 76, 255, 0.09),
+      transparent 35%
+    ),
+    #f8fafc;
+}
+
+/* =====================================================
+   PARTY ANIMATION
+===================================================== */
+
+.party-animation {
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  overflow: hidden;
+
+  z-index: 1;
+}
+
+/* =====================================================
+   CONFETTI CONTAINER
+===================================================== */
+
+.confetti-container {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 520px;
+
+  overflow: hidden;
+
+  pointer-events: none;
+}
+
+/* =====================================================
+   CONFETTI PIECES
+===================================================== */
+
+.confetti {
+  position: absolute;
+
+  top: -25px;
+
+  width: 9px;
+  height: 16px;
+
+  border-radius: 2px;
+
+  opacity: 0;
+
+  animation-name: confettiFall;
+  animation-timing-function: ease-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+/* Different shapes */
+
+.confetti:nth-child(3n) {
+  width: 7px;
+  height: 12px;
+
+  border-radius: 50%;
+}
+
+.confetti:nth-child(4n) {
+  width: 6px;
+  height: 18px;
+
+  transform: rotate(25deg);
+}
+
+.confetti:nth-child(5n) {
+  width: 12px;
+  height: 6px;
+
+  border-radius: 50%;
+}
+
+/* Different visual colors */
+
+.confetti-1 {
+  background: #244cff;
+}
+
+.confetti-2 {
+  background: #ffb71b;
+}
+
+.confetti-3 {
+  background: #22c55e;
+}
+
+.confetti-4 {
+  background: #ef4444;
+}
+
+.confetti-5 {
+  background: #a855f7;
+}
+
+.confetti-6 {
+  background: #06b6d4;
+}
+
+/* =====================================================
+   CONFETTI FALL ANIMATION
+===================================================== */
+
+@keyframes confettiFall {
+  0% {
+    opacity: 0;
+
+    transform:
+      translate3d(0, -20px, 0)
+      rotate(0deg)
+      scale(0.5);
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 1;
+
+    transform:
+      translate3d(
+        35px,
+        230px,
+        0
+      )
+      rotate(360deg)
+      scale(1);
+  }
+
+  100% {
+    opacity: 0;
+
+    transform:
+      translate3d(
+        -45px,
+        540px,
+        0
+      )
+      rotate(720deg)
+      scale(0.8);
+  }
+}
+
+/* =====================================================
+   PARTY POPPERS
+===================================================== */
+
+.party-popper {
+  position: absolute;
+
+  top: 95px;
+
+  width: 80px;
+  height: 80px;
+
+  z-index: 2;
+
+  opacity: 0;
+
+  animation:
+    popperAppear
+    0.8s
+    ease-out
+    0.4s
+    forwards;
+}
+
+.party-left {
+  left: 4%;
+
+  transform: rotate(-25deg);
+}
+
+.party-right {
+  right: 4%;
+
+  transform: rotate(25deg);
+}
+
+/* =====================================================
+   POPPER BODY
+===================================================== */
+
+.popper-body {
+  font-size: 48px;
+
+  filter:
+    drop-shadow(
+      0 8px 12px
+      rgba(15, 23, 42, 0.15)
+    );
+}
+
+/* =====================================================
+   POPPER APPEAR
+===================================================== */
+
+@keyframes popperAppear {
+  0% {
+    opacity: 0;
+
+    transform:
+      scale(0)
+      rotate(-20deg);
+  }
+
+  60% {
+    opacity: 1;
+
+    transform:
+      scale(1.15)
+      rotate(5deg);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform:
+      scale(1)
+      rotate(0deg);
+  }
+}
+
+/* =====================================================
+   SUCCESS CARD
+===================================================== */
+
+.success-card {
+  position: relative;
+
+  z-index: 5;
+
+  width: min(760px, 100%);
+
+  margin-top: 25px;
+
+  padding: 36px 42px 30px;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border: 1px solid #e6ebf2;
+
+  border-radius: 20px;
+
+  box-shadow:
+    0 25px 70px
+    rgba(15, 23, 42, 0.10);
+
+  text-align: center;
+
+  animation:
+    successCardAppear
+    0.65s
+    ease-out;
+}
+
+/* =====================================================
+   CARD APPEAR
+===================================================== */
+
+@keyframes successCardAppear {
+  0% {
+    opacity: 0;
+
+    transform:
+      translateY(30px)
+      scale(0.97);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+}
+
+/* =====================================================
+   SUCCESS ICON
+===================================================== */
+
+.success-icon-wrapper {
+  display: flex;
+
+  justify-content: center;
+
+  margin-bottom: 16px;
+}
+
+.success-icon-ring {
+  width: 72px;
+  height: 72px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ecfdf5,
+      #d1fae5
+    );
+
+  color: #16a34a;
+
+  border: 5px solid #f0fdf4;
+
+  box-shadow:
+    0 10px 30px
+    rgba(22, 163, 74, 0.14);
+
+  animation:
+    successPulse
+    1.8s
+    ease-in-out
+    infinite;
+}
+
+/* =====================================================
+   SUCCESS PULSE
+===================================================== */
+
+@keyframes successPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.06);
+  }
+}
+
+/* =====================================================
+   SUCCESS LABEL
+===================================================== */
+
+.success-label {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 6px 11px;
+
+  border-radius: 999px;
+
+  background: #eef3ff;
+
+  color: #244cff;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 0.7px;
+
+  margin-bottom: 9px;
+}
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+.success-card h1 {
+  margin: 0;
+
+  color: #102d68;
+
+  font-size: 30px;
+
+  line-height: 1.2;
+
+  font-weight: 800;
+
+  letter-spacing: -0.6px;
+}
+
+.title-party {
+  display: inline-block;
+
+  margin-left: 8px;
+
+  animation:
+    partyBounce
+    1.3s
+    ease-in-out
+    infinite;
+}
+
+@keyframes partyBounce {
+  0%,
+  100% {
+    transform:
+      rotate(-8deg)
+      translateY(0);
+  }
+
+  50% {
+    transform:
+      rotate(8deg)
+      translateY(-5px);
+  }
+}
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
+.success-description {
+  max-width: 540px;
+
+  margin: 10px auto 25px;
+
+  color: #7c89a2;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+}
+
+/* =====================================================
+   MENTOR CARD
+===================================================== */
+
+.success-mentor {
+  position: relative;
+
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 15px 17px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  text-align: left;
+
+  border-radius: 12px;
+
+  background: #f8faff;
+
+  border: 1px solid #e5ebf5;
+
+  margin-bottom: 18px;
+}
+
+/* =====================================================
+   MENTOR IMAGE
+===================================================== */
+
+.mentor-image-wrapper {
+  position: relative;
+
+  flex-shrink: 0;
+}
+
+.mentor-image-wrapper img {
+  width: 58px;
+  height: 58px;
+
+  display: block;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+
+  border: 3px solid #ffffff;
+
+  box-shadow:
+    0 5px 15px
+    rgba(15, 23, 42, 0.12);
+}
+
+/* =====================================================
+   ONLINE DOT
+===================================================== */
+
+.online-dot {
+  position: absolute;
+
+  right: 1px;
+  bottom: 2px;
+
+  width: 12px;
+  height: 12px;
+
+  border-radius: 50%;
+
+  background: #22c55e;
+
+  border: 2px solid #ffffff;
+}
+
+/* =====================================================
+   MENTOR INFO
+===================================================== */
+
+.mentor-info {
+  min-width: 0;
+
+  flex: 1;
+}
+
+.mentor-info h3 {
+  margin: 0 0 3px;
+
+  color: #172554;
+
+  font-size: 17px;
+
+  font-weight: 750;
+}
+
+.mentor-info p {
+  margin: 0 0 4px;
+
+  color: #7c89a2;
+
+  font-size: 12px;
+}
+
+.mentor-rating {
+  display: flex;
+
+  align-items: center;
+
+  gap: 4px;
+
+  color: #64748b;
+
+  font-size: 11px;
+}
+
+.mentor-rating span:first-child {
+  color: #f59e0b;
+
+  font-size: 13px;
+}
+
+/* =====================================================
+   ASSIGNED BADGE
+===================================================== */
+
+.assigned-badge {
+  display: flex;
+
+  align-items: center;
+
+  gap: 4px;
+
+  flex-shrink: 0;
+
+  padding: 6px 9px;
+
+  border-radius: 999px;
+
+  background: #ecfdf5;
+
+  color: #15803d;
+
+  font-size: 10px;
+
+  font-weight: 700;
+}
+
+/* =====================================================
+   SUCCESS DETAILS
+===================================================== */
+
+.success-details {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  border-top: 1px solid #edf1f6;
+
+  border-bottom: 1px solid #edf1f6;
+
+  text-align: left;
+
+  margin-bottom: 18px;
+}
+
+/* =====================================================
+   DETAIL
+===================================================== */
+
+.success-detail {
+  min-width: 0;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 10px;
+
+  padding: 15px;
+
+  box-sizing: border-box;
+}
+
+.success-detail:nth-child(odd) {
+  border-right: 1px solid #edf1f6;
+}
+
+.success-detail:nth-child(-n + 2) {
+  border-bottom: 1px solid #edf1f6;
+}
+
+/* =====================================================
+   DETAIL ICON
+===================================================== */
+
+.detail-icon {
+  width: 32px;
+  height: 32px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 8px;
+
+  background: #eef3ff;
+
+  color: #244cff;
+}
+
+/* =====================================================
+   DETAIL TEXT
+===================================================== */
+
+.success-detail small {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: #94a3b8;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.5px;
+}
+
+.success-detail strong {
+  display: block;
+
+  color: #334155;
+
+  font-size: 12px;
+
+  line-height: 1.45;
+
+  word-break: break-word;
+}
+
+/* =====================================================
+   MEETING SECTION
+===================================================== */
+
+.meeting-section {
+  width: 100%;
+
+  padding: 17px;
+
+  box-sizing: border-box;
+
+  border-radius: 13px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f8faff,
+      #f5f8ff
+    );
+
+  border: 1px solid #dfe7f5;
+
+  margin-bottom: 16px;
+}
+
+/* =====================================================
+   MEETING HEADER
+===================================================== */
+
+.meeting-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 10px;
+
+  margin-bottom: 12px;
+}
+
+.meeting-title {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  text-align: left;
+}
+
+.meeting-icon {
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 8px;
+
+  background: #244cff;
+
+  color: #ffffff;
+}
+
+.meeting-title strong {
+  display: block;
+
+  color: #172554;
+
+  font-size: 13px;
+}
+
+.meeting-title span {
+  display: block;
+
+  margin-top: 2px;
+
+  color: #8a96aa;
+
+  font-size: 10px;
+}
+
+/* =====================================================
+   MEETING READY
+===================================================== */
+
+.meeting-ready {
+  padding: 5px 8px;
+
+  border-radius: 999px;
+
+  background: #ecfdf5;
+
+  color: #15803d;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+/* =====================================================
+   MEETING LINK ROW
+===================================================== */
+
+.meeting-link-row {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  width: 100%;
+}
+
+/* =====================================================
+   MEETING LINK
+===================================================== */
+
+.meeting-link {
+  min-width: 0;
+
+  flex: 1;
+
+  padding: 10px 12px;
+
+  box-sizing: border-box;
+
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  border: 1px solid #e0e6ef;
+
+  color: #475569;
+
+  font-size: 11px;
+
+  text-align: left;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+/* =====================================================
+   COPY BUTTON
+===================================================== */
+
+.copy-button {
+  flex-shrink: 0;
+
+  height: 37px;
+
+  padding: 0 12px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 5px;
+
+  border: 1px solid #d7e0ef;
+
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  color: #334155;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.copy-button:hover {
+  background: #f1f5ff;
+
+  transform: translateY(-1px);
+}
+
+/* =====================================================
+   JOIN CLASS BUTTON
+===================================================== */
+
+.join-class-button {
+  width: 100%;
+
+  margin-top: 10px;
+
+  height: 45px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: #244cff;
+
+  color: #ffffff;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 7px 18px
+    rgba(36, 76, 255, 0.20);
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.join-class-button:hover {
+  background: #1d3fe0;
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 10px 22px
+    rgba(36, 76, 255, 0.25);
+}
+
+/* =====================================================
+   SUCCESS MESSAGE
+===================================================== */
+
+.success-message {
+  width: 100%;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 10px;
+
+  padding: 12px 14px;
+
+  box-sizing: border-box;
+
+  border-radius: 10px;
+
+  background: #f0fdf4;
+
+  border: 1px solid #dcfce7;
+
+  text-align: left;
+
+  margin-bottom: 17px;
+}
+
+.success-message-icon {
+  width: 24px;
+  height: 24px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #22c55e;
+
+  color: #ffffff;
+
+  font-size: 12px;
+
+  font-weight: 800;
+}
+
+.success-message strong {
+  display: block;
+
+  margin-bottom: 2px;
+
+  color: #166534;
+
+  font-size: 11px;
+}
+
+.success-message p {
+  margin: 0;
+
+  color: #4d7c5c;
+
+  font-size: 10px;
+
+  line-height: 1.5;
+}
+
+/* =====================================================
+   ACTIONS
+===================================================== */
+
+.success-actions {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 20px;
+}
+
+.calendar-button,
+.dashboard-button {
+  min-height: 40px;
+
+  padding: 0 15px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+
+  border-radius: 8px;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+/* Calendar */
+
+.calendar-button {
+  border: 1px solid #dbe3ee;
+
+  background: #ffffff;
+
+  color: #334155;
+}
+
+.calendar-button:hover {
+  background: #f8fafc;
+
+  transform: translateY(-1px);
+}
+
+/* Dashboard */
+
+.dashboard-button {
+  border: none;
+
+  background: #102d68;
+
+  color: #ffffff;
+}
+
+.dashboard-button:hover {
+  background: #071d48;
+
+  transform: translateY(-1px);
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.success-footer {
+  width: 100%;
+
+  padding-top: 17px;
+
+  border-top: 1px solid #edf1f6;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+
+  text-align: left;
+}
+
+.success-footer > div {
+  display: flex;
+
+  flex-direction: column;
+
+  flex: 1;
+
+  min-width: 0;
+}
+
+.success-footer span {
+  color: #94a3b8;
+
+  font-size: 9px;
+
+  margin-bottom: 3px;
+}
+
+.success-footer strong {
+  color: #475569;
+
+  font-size: 11px;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+}
+
+.success-footer button {
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  border: none;
+
+  background: transparent;
+
+  color: #244cff;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.success-footer button:hover {
+  text-decoration: underline;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 750px) {
+
+  .success-page {
+    padding:
+      25px 12px 50px;
+  }
+
+  .success-card {
+    padding:
+      28px 20px 25px;
+  }
+
+  .success-card h1 {
+    font-size: 25px;
+  }
+
+  .party-popper {
+    display: none;
+  }
+
+  .success-mentor {
+    align-items: flex-start;
+  }
+
+  .assigned-badge {
+    display: none;
+  }
+
+  .success-details {
+    grid-template-columns: 1fr;
+  }
+
+  .success-detail:nth-child(odd) {
+    border-right: none;
+  }
+
+  .success-detail:nth-child(-n + 2) {
+    border-bottom: none;
+  }
+
+  .success-detail:not(:last-child) {
+    border-bottom: 1px solid #edf1f6;
+  }
+
+  .meeting-link-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .copy-button {
+    width: 100%;
+  }
+
+  .success-actions {
+    flex-direction: column;
+  }
+
+  .calendar-button,
+  .dashboard-button {
+    width: 100%;
+  }
+
+  .success-footer {
+    flex-wrap: wrap;
+  }
+
+  .success-footer button {
+    width: 100%;
+
+    justify-content: center;
+
+    padding-top: 8px;
+  }
+}
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 450px) {
+
+  .success-card {
+    padding:
+      24px 15px 22px;
+
+    border-radius: 15px;
+  }
+
+  .success-card h1 {
+    font-size: 22px;
+  }
+
+  .success-description {
+    font-size: 12px;
+  }
+
+  .success-mentor {
+    padding: 12px;
+  }
+
+  .mentor-image-wrapper img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .mentor-info h3 {
+    font-size: 15px;
+  }
+
+  .success-detail {
+    padding: 12px;
+  }
+
+  .meeting-section {
+    padding: 13px;
+  }
+}
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .confetti,
+  .party-popper,
+  .success-icon-ring,
+  .title-party,
+  .success-card {
+    animation: none !important;
+  }
+}

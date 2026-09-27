@@ -1,0 +1,833 @@
+/* =========================================================
+   SINGLE COMMON NAVBAR
+========================================================= */
+
+.main-navbar {
+  position: sticky;
+
+  top: 0;
+
+  z-index: 1000;
+
+  width: 100%;
+
+  background: #071d48;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   NAVBAR INNER
+========================================================= */
+
+.navbar-inner {
+  width: 100%;
+
+  min-height: 72px;
+
+  padding: 0 42px;
+
+  display: flex;
+
+  align-items: center;
+
+  box-sizing: border-box;
+
+  background: #071d48;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.navbar-logo {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  text-decoration: none;
+
+  color: #ffffff;
+
+  flex-shrink: 0;
+}
+
+
+.navbar-logo-mark {
+  width: 28px;
+
+  height: 28px;
+
+  display: flex;
+
+  align-items: center;
+
+  flex-shrink: 0;
+}
+
+
+.navbar-logo-mark span {
+  width: 24px;
+
+  height: 24px;
+
+  display: block;
+
+  background: #ffb71b;
+
+  border-radius: 3px;
+
+  clip-path: polygon(
+    0 0,
+    43% 0,
+    43% 58%,
+    100% 58%,
+    100% 100%,
+    0 100%
+  );
+}
+
+
+.navbar-logo-text {
+  font-size: 22px;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   DESKTOP NAVIGATION
+========================================================= */
+
+.navbar-links {
+  display: flex;
+
+  align-items: center;
+
+  gap: 30px;
+
+  margin-left: auto;
+
+  margin-right: 30px;
+}
+
+
+.nav-link {
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+  white-space: nowrap;
+
+  padding: 11px 4px;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.nav-link:hover {
+  color: #bcd2ff;
+
+  transform:
+    translateY(-1px);
+}
+
+
+.nav-link.active {
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   BOOK TRIAL BUTTON
+========================================================= */
+
+.trial-link {
+  padding: 11px 18px;
+
+  border-radius: 8px;
+
+  background: #244cff;
+
+  box-shadow:
+    0 4px 12px
+    rgba(36, 76, 255, 0.25);
+}
+
+
+.trial-link:hover {
+  color: #ffffff;
+
+  background: #3560ff;
+}
+
+
+.trial-link.active {
+  background: #3560ff;
+}
+
+
+/* =========================================================
+   SIGN IN
+========================================================= */
+
+.navbar-signin {
+  min-width: 76px;
+
+  padding: 11px 20px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 8px;
+
+  background: #244cff;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  transition:
+    all 0.2s ease;
+}
+
+
+.navbar-signin:hover {
+  background: #3560ff;
+
+  transform:
+    translateY(-1px);
+}
+
+
+.active-signin {
+  background: #3560ff;
+}
+
+
+/* =========================================================
+   PAGE CONTENT
+========================================================= */
+
+.page-content {
+  width: 100%;
+}
+
+
+/* =========================================================
+   MOBILE HAMBURGER
+========================================================= */
+
+.mobile-menu-button {
+  display: none;
+
+  width: 42px;
+
+  height: 42px;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.15);
+
+  border-radius: 8px;
+
+  background:
+    rgba(255, 255, 255, 0.08);
+
+  color: #ffffff;
+
+  cursor: pointer;
+
+  transition:
+    all 0.2s ease;
+}
+
+
+.mobile-menu-button:hover {
+  background:
+    rgba(255, 255, 255, 0.15);
+
+  border-color:
+    rgba(255, 255, 255, 0.25);
+}
+
+
+.mobile-menu-button:active {
+  transform:
+    scale(0.95);
+}
+
+
+/* =========================================================
+   MOBILE OVERLAY
+========================================================= */
+
+.mobile-menu-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 2000;
+
+  display: flex;
+
+  justify-content: flex-end;
+
+  background:
+    rgba(0, 0, 0, 0);
+
+  visibility: hidden;
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  transition:
+    opacity 0.25s ease,
+    background 0.25s ease,
+    visibility 0.25s ease;
+}
+
+
+.mobile-menu-overlay.open {
+  visibility: visible;
+
+  opacity: 1;
+
+  pointer-events: auto;
+
+  background:
+    rgba(0, 0, 0, 0.55);
+}
+
+
+/* =========================================================
+   MOBILE SIDE MENU
+========================================================= */
+
+.mobile-menu {
+  width:
+    min(86vw, 360px);
+
+  height: 100%;
+
+  padding:
+    20px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  box-sizing: border-box;
+
+  background: #071d48;
+
+  box-shadow:
+    -10px 0 35px
+    rgba(0, 0, 0, 0.25);
+
+  transform:
+    translateX(100%);
+
+  transition:
+    transform 0.3s
+    cubic-bezier(
+      0.4,
+      0,
+      0.2,
+      1
+    );
+
+  overflow-y: auto;
+}
+
+
+.mobile-menu-overlay.open
+.mobile-menu {
+  transform:
+    translateX(0);
+}
+
+
+/* =========================================================
+   MOBILE MENU HEADER
+========================================================= */
+
+.mobile-menu-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding-bottom: 20px;
+
+  border-bottom:
+    1px solid
+    rgba(255, 255, 255, 0.12);
+}
+
+
+.mobile-menu-logo {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  color: #ffffff;
+
+  text-decoration: none;
+}
+
+
+.mobile-menu-logo
+.navbar-logo-mark {
+  width: 28px;
+
+  height: 28px;
+}
+
+
+.mobile-menu-logo
+.navbar-logo-text {
+  color: #ffffff;
+
+  font-size: 19px;
+}
+
+
+/* =========================================================
+   MOBILE CLOSE BUTTON
+========================================================= */
+
+.mobile-close-button {
+  width: 40px;
+
+  height: 40px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.12);
+
+  border-radius: 8px;
+
+  background:
+    rgba(255, 255, 255, 0.08);
+
+  color: #ffffff;
+
+  cursor: pointer;
+
+  transition:
+    all 0.2s ease;
+}
+
+
+.mobile-close-button:hover {
+  background:
+    rgba(255, 255, 255, 0.16);
+
+  color: #ffb71b;
+}
+
+
+/* =========================================================
+   MOBILE NAVIGATION
+========================================================= */
+
+.mobile-nav {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+
+  padding-top: 24px;
+}
+
+
+.mobile-nav-link {
+  min-height: 52px;
+
+  padding:
+    0 16px;
+
+  display: flex;
+
+  align-items: center;
+
+  box-sizing: border-box;
+
+  border-radius: 9px;
+
+  color: #d8e2f4;
+
+  text-decoration: none;
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+  transition:
+    all 0.2s ease;
+}
+
+
+.mobile-nav-link:hover {
+  color: #ffffff;
+
+  background:
+    rgba(255, 255, 255, 0.07);
+
+  transform:
+    translateX(3px);
+}
+
+
+/* Active mobile item */
+
+.mobile-nav-link.active {
+  color: #ffffff;
+
+  background: #244cff;
+
+  font-weight: 600;
+
+  box-shadow:
+    0 5px 15px
+    rgba(36, 76, 255, 0.25);
+}
+
+
+/* =========================================================
+   MOBILE SIGN IN
+========================================================= */
+
+.mobile-signin {
+  width: 100%;
+
+  min-height: 48px;
+
+  margin-top: 22px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  box-sizing: border-box;
+
+  border-radius: 8px;
+
+  background: #244cff;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  transition:
+    all 0.2s ease;
+}
+
+
+.mobile-signin:hover {
+  background: #3560ff;
+
+  transform:
+    translateY(-1px);
+}
+
+
+.mobile-signin.active {
+  background: #3560ff;
+}
+
+
+/* =========================================================
+   MOBILE FOOTER
+========================================================= */
+
+.mobile-menu-footer {
+  margin-top: auto;
+
+  padding-top: 22px;
+
+  text-align: center;
+
+  border-top:
+    1px solid
+    rgba(255, 255, 255, 0.10);
+}
+
+
+.mobile-menu-footer span {
+  color: #8ea4c5;
+
+  font-size: 11px;
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .navbar-inner {
+    padding:
+      0 20px;
+  }
+
+  .navbar-links {
+    gap: 15px;
+
+    margin-right: 15px;
+  }
+
+  .nav-link {
+    font-size: 12px;
+  }
+
+  .trial-link {
+    padding:
+      10px 13px;
+  }
+
+  .navbar-signin {
+    padding:
+      10px 15px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .main-navbar {
+    height: 64px;
+  }
+
+
+  .navbar-inner {
+    min-height: 64px;
+
+    height: 64px;
+
+    padding:
+      0 14px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    flex-wrap: nowrap;
+
+    gap: 0;
+  }
+
+
+  /* Hide desktop navigation */
+
+  .navbar-links {
+    display: none;
+  }
+
+
+  /* Hide desktop Sign In */
+
+  .navbar-signin {
+    display: none;
+  }
+
+
+  /* Show hamburger */
+
+  .mobile-menu-button {
+    display: flex;
+  }
+
+
+  /* Smaller logo */
+
+  .navbar-logo-mark {
+    width: 27px;
+
+    height: 27px;
+  }
+
+
+  .navbar-logo-mark span {
+    width: 23px;
+
+    height: 23px;
+  }
+
+
+  .navbar-logo-text {
+    font-size: 19px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .main-navbar {
+    height: 62px;
+  }
+
+
+  .navbar-inner {
+    height: 62px;
+
+    min-height: 62px;
+
+    padding:
+      0 12px;
+  }
+
+
+  .navbar-logo {
+    gap: 7px;
+  }
+
+
+  .navbar-logo-mark {
+    width: 26px;
+
+    height: 26px;
+  }
+
+
+  .navbar-logo-mark span {
+    width: 22px;
+
+    height: 22px;
+  }
+
+
+  .navbar-logo-text {
+    font-size: 18px;
+  }
+
+
+  .mobile-menu-button {
+    width: 40px;
+
+    height: 40px;
+  }
+
+
+  .mobile-menu {
+    width: 90vw;
+
+    padding:
+      18px 16px;
+  }
+
+
+  .mobile-nav-link {
+    min-height: 49px;
+
+    font-size: 13px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 330px) {
+
+  .navbar-logo-text {
+    font-size: 16px;
+  }
+
+
+  .mobile-menu {
+    width: 94vw;
+  }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+.mobile-menu-button:focus-visible,
+.mobile-close-button:focus-visible,
+.nav-link:focus-visible,
+.navbar-signin:focus-visible,
+.mobile-nav-link:focus-visible,
+.mobile-signin:focus-visible {
+  outline:
+    3px solid
+    rgba(255, 183, 27, 0.45);
+
+  outline-offset: 2px;
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .mobile-menu-overlay,
+  .mobile-menu,
+  .mobile-nav-link,
+  .mobile-menu-button,
+  .mobile-close-button,
+  .navbar-signin,
+  .nav-link,
+  .mobile-signin {
+    transition: none !important;
+  }
+}

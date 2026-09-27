@@ -1,0 +1,138 @@
+
+
+.booking-steps {
+  width: min(100%, 1100px);
+  margin: 28px auto 32px;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  position: relative;
+  padding: 0 20px;
+
+  box-sizing: border-box;
+}
+
+/* Horizontal connecting line */
+
+.booking-steps::before {
+  content: "";
+
+  position: absolute;
+
+  top: 18px;
+  left: 12%;
+  right: 12%;
+
+  height: 2px;
+
+  background: #e2e8f0;
+
+  z-index: 0;
+}
+
+/* Each step */
+
+.booking-step {
+  position: relative;
+
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 8px;
+
+  min-width: 100px;
+
+  background: transparent;
+
+  color: #94a3b8;
+
+  font-size: 12px;
+  font-weight: 500;
+
+  text-align: center;
+}
+
+/* Circle */
+
+.booking-step-circle {
+  width: 36px;
+  height: 36px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #ffffff;
+
+  border: 2px solid #dbe3ee;
+
+  color: #94a3b8;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+/* Current / completed */
+
+.booking-step.active .booking-step-circle {
+  background: #244cff;
+
+  border-color: #244cff;
+
+  color: #ffffff;
+
+  box-shadow: 0 4px 12px rgba(36, 76, 255, 0.22);
+}
+
+/* Active text */
+
+.booking-step.active span {
+  color: #244cff;
+  font-weight: 600;
+}
+
+/* Hover */
+
+.booking-step:hover .booking-step-circle {
+  transform: scale(1.06);
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+  .booking-steps {
+    padding: 0 8px;
+    margin: 20px auto 25px;
+  }
+
+  .booking-steps::before {
+    left: 12%;
+    right: 12%;
+  }
+
+  .booking-step {
+    min-width: 70px;
+    font-size: 10px;
+  }
+
+  .booking-step-circle {
+    width: 32px;
+    height: 32px;
+
+    font-size: 12px;
+  }
+}
