@@ -8,8 +8,17 @@ export const db = mysql.createPool({
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
-  port: Number(process.env.DB_PORT),
+  port: Number(process.env.DB_PORT) || 4000,
+
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0,
+
+  // TiDB Cloud requires a secure TLS connection.
+  ssl:
+    process.env.DB_SSL === "true"
+      ? {
+          rejectUnauthorized: true,
+        }
+      : undefined,
 });
