@@ -7,13 +7,10 @@ import bookingRoutes from "./routes/bookingRoutes";
 
 const app = express();
 
-// CORS
 app.use(cors({ origin: true }));
 
-// JSON body parser
 app.use(express.json());
 
-// Health check
 app.get("/health", (_req, res) => {
   res.status(200).json({
     success: true,
@@ -21,12 +18,10 @@ app.get("/health", (_req, res) => {
   });
 });
 
-// API routes
 app.use("/api/parents", parentRoutes);
 app.use("/api/mentors", mentorRoutes);
 app.use("/api/bookings", bookingRoutes);
 
-// Unknown route
 app.use((_req, res) => {
   res.status(404).json({
     success: false,

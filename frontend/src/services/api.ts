@@ -6,13 +6,8 @@ const API_BASE_URL =
 // HELPER
 // =====================================================
 
-async function parseResponse(
-  response: Response
-) {
-  const data =
-    await response.json().catch(
-      () => null
-    );
+async function parseResponse(response: Response) {
+  const data = await response.json().catch(() => null);
 
   if (!response.ok) {
     throw new Error(
@@ -30,19 +25,13 @@ async function parseResponse(
 
 export async function getMentors() {
   try {
-    const response =
-      await fetch(
-        `${API_BASE_URL}/mentors`
-      );
+    const response = await fetch(
+      `${API_BASE_URL}/mentors`
+    );
 
-    return await parseResponse(
-      response
-    );
+    return await parseResponse(response);
   } catch (error: any) {
-    console.error(
-      "Get mentors error:",
-      error
-    );
+    console.error("Get mentors error:", error);
 
     throw new Error(
       error?.message ||
@@ -57,19 +46,13 @@ export async function getMentors() {
 
 export async function getParents() {
   try {
-    const response =
-      await fetch(
-        `${API_BASE_URL}/parents`
-      );
+    const response = await fetch(
+      `${API_BASE_URL}/parents`
+    );
 
-    return await parseResponse(
-      response
-    );
+    return await parseResponse(response);
   } catch (error: any) {
-    console.error(
-      "Get parents error:",
-      error
-    );
+    console.error("Get parents error:", error);
 
     throw new Error(
       error?.message ||
@@ -90,31 +73,20 @@ export async function createParent(
   }
 ) {
   try {
-    const response =
-      await fetch(
-        `${API_BASE_URL}/parents`,
-        {
-          method: "POST",
-
-          headers: {
-            "Content-Type":
-              "application/json",
-          },
-
-          body: JSON.stringify(
-            parentData
-          ),
-        }
-      );
-
-    return await parseResponse(
-      response
+    const response = await fetch(
+      `${API_BASE_URL}/parents`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(parentData),
+      }
     );
+
+    return await parseResponse(response);
   } catch (error: any) {
-    console.error(
-      "Create parent error:",
-      error
-    );
+    console.error("Create parent error:", error);
 
     throw new Error(
       error?.message ||
@@ -137,19 +109,15 @@ export async function getMentorAvailability(
       );
     }
 
-    const params =
-      new URLSearchParams({
-        scheduledAtUtc,
-      });
+    const params = new URLSearchParams({
+      scheduledAtUtc,
+    });
 
-    const response =
-      await fetch(
-        `${API_BASE_URL}/bookings/availability?${params.toString()}`
-      );
-
-    return await parseResponse(
-      response
+    const response = await fetch(
+      `${API_BASE_URL}/bookings/availability?${params.toString()}`
     );
+
+    return await parseResponse(response);
   } catch (error: any) {
     console.error(
       "Mentor availability error:",
@@ -181,42 +149,30 @@ export async function createBooking(
       );
     }
 
-    if (
-      !bookingData.scheduledAtUtc
-    ) {
+    if (!bookingData.scheduledAtUtc) {
       throw new Error(
         "Scheduled time is required."
       );
     }
 
-    if (
-      !bookingData.parentTimezone
-    ) {
+    if (!bookingData.parentTimezone) {
       throw new Error(
         "Parent timezone is required."
       );
     }
 
-    const response =
-      await fetch(
-        `${API_BASE_URL}/bookings`,
-        {
-          method: "POST",
-
-          headers: {
-            "Content-Type":
-              "application/json",
-          },
-
-          body: JSON.stringify(
-            bookingData
-          ),
-        }
-      );
-
-    return await parseResponse(
-      response
+    const response = await fetch(
+      `${API_BASE_URL}/bookings`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(bookingData),
+      }
     );
+
+    return await parseResponse(response);
   } catch (error: any) {
     console.error(
       "Create booking error:",
@@ -236,14 +192,11 @@ export async function createBooking(
 
 export async function getBookings() {
   try {
-    const response =
-      await fetch(
-        `${API_BASE_URL}/bookings`
-      );
-
-    return await parseResponse(
-      response
+    const response = await fetch(
+      `${API_BASE_URL}/bookings`
     );
+
+    return await parseResponse(response);
   } catch (error: any) {
     console.error(
       "Get bookings error:",
