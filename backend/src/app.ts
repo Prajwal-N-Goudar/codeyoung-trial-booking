@@ -7,70 +7,31 @@ import bookingRoutes from "./routes/bookingRoutes";
 
 const app = express();
 
-// =======================================
 // CORS
-// =======================================
+app.use(cors({ origin: true }));
 
-app.use(
-  cors({
-    origin: "http://localhost:5173",
-  })
-);
+// JSON body parser
+app.use(express.json());
 
-// =======================================
-// JSON BODY
-// =======================================
+// Health check
+app.get("/health", (_req, res) => {
+  res.status(200).json({
+    success: true,
+    message: "CodeYoung booking API is running",
+  });
+});
 
-app.use(
-  express.json()
-);
+// API routes
+app.use("/api/parents", parentRoutes);
+app.use("/api/mentors", mentorRoutes);
+app.use("/api/bookings", bookingRoutes);
 
-// =======================================
-// API ROUTES
-// =======================================
-
-app.use(
-  "/api/parents",
-  parentRoutes
-);
-
-app.use(
-  "/api/mentors",
-  mentorRoutes
-);
-
-app.use(
-  "/api/bookings",
-  bookingRoutes
-);
-
-// =======================================
-// HEALTH CHECK
-// =======================================
-
-app.get(
-  "/health",
-  (_req, res) => {
-    res.status(200).json({
-      success: true,
-      message:
-        "CodeYoung booking API is running",
-    });
-  }
-);
-
-// =======================================
-// UNKNOWN ROUTE
-// =======================================
-
-app.use(
-  (_req, res) => {
-    res.status(404).json({
-      success: false,
-      message:
-        "API route not found",
-    });
-  }
-);
+// Unknown route
+app.use((_req, res) => {
+  res.status(404).json({
+    success: false,
+    message: "API route not found",
+  });
+});
 
 export default app;
