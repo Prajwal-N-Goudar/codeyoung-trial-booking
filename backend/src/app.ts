@@ -40,14 +40,6 @@ app.get("/health", (_req, res) => {
   });
 });
 
-// Temporary deployment test
-app.get("/api/test", (_req, res) => {
-  res.status(200).json({
-    success: true,
-    message: "New backend code is deployed",
-  });
-});
-
 app.use("/api/parents", parentRoutes);
 app.use("/api/mentors", mentorRoutes);
 app.use("/api/bookings", bookingRoutes);
